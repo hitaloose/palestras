@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { ConfirmFooter } from "../../../components/ConfirmFooter";
+import { DateFieldForm } from "../../../components/DateFieldForm";
 import { Loading } from "../../../components/Loading";
 import { PageContainer } from "../../../components/PageContainer";
 import { TextFieldForm } from "../../../components/TextFieldForm";
@@ -126,7 +127,7 @@ export default function () {
             />
           </Grid>
           <Grid xs={6}>
-            <TextFieldForm
+            <DateFieldForm
               fullWidth
               disabled
               label="Data última palestra"

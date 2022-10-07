@@ -132,7 +132,7 @@ export default function () {
             {
               field: "dataUltimaPalestra",
               headerName: "Última palestra",
-              flex: 1,
+              width: 200,
               sortable: false,
               renderCell: ({ value }) => dateToString(value),
             },
