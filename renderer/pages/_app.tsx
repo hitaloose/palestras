@@ -24,6 +24,7 @@ import "../lib/db";
 import "./global.css";
 import { Loading } from "../components/Loading";
 import migration from "../lib/migration";
+import { loadDatabases } from "../lib/loadDatabases";
 
 export default function (props: AppProps) {
   const { Component, pageProps } = props;
@@ -58,6 +59,7 @@ export default function (props: AppProps) {
 
   const handleDidMount = useCallback(async () => {
     try {
+      await loadDatabases();
       await migration();
     } catch (error) {
       console.log("erro ao rodar migrations", error);

@@ -13,19 +13,15 @@ type DB = {
 
 export const db: DB = {
   oradores: new NeDB<Orador>({
-    autoload: true,
     filename: "./db/oradores.json",
   }),
   discursos: new NeDB<Discurso>({
-    autoload: true,
     filename: "./db/discursos.json",
   }),
   palestras: new NeDB<Palestra>({
-    autoload: true,
     filename: "./db/palestras.json",
   }),
   migrations: new NeDB<Migration>({
-    autoload: true,
     filename: "./db/migrations.json",
   }),
 };

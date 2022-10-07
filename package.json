@@ -1,9 +1,9 @@
 {
   "private": true,
-  "name": "my-nextron-app",
-  "description": "My application description",
+  "name": "palestras",
+  "description": "Controle palestras de discursos",
   "version": "1.0.0",
-  "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
+  "author": "Hitalo Loose <hitaloose@gmail.com>",
   "main": "app/background.js",
   "scripts": {
     "dev": "nextron",
