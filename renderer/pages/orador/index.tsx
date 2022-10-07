@@ -22,10 +22,10 @@ export default function () {
   const [oradoresCount, setOradoresCount] = useState(0);
 
   const getOradores = useCallback(async (page: number, q: string) => {
-    const gettedOradores = await OradorRepo.findAll({ page, q });
-    const gettedOradoresCount = await OradorRepo.count({ q });
-    setOradores(gettedOradores);
-    setOradoresCount(gettedOradoresCount);
+    const getted = await OradorRepo.findAll({ page, q });
+    const gettedCount = await OradorRepo.count({ q });
+    setOradores(getted);
+    setOradoresCount(gettedCount);
   }, []);
 
   const deleteOrador = useCallback(async (id: string) => {
@@ -36,9 +36,9 @@ export default function () {
       await getOradores(1, "");
       setPageIndex(0);
       setQ("");
-      toast.success("Orador removido com sucesso 🎉");
+      toast.success("Orador removido com sucesso");
     } catch (error) {
-      toast.error("Erro ao excluir orador 😢");
+      toast.error("Erro ao excluir orador");
       console.log(error);
     } finally {
       setLoading(false);
@@ -51,7 +51,7 @@ export default function () {
 
       await getOradores(1, "");
     } catch (error) {
-      toast.error("Erro ao obter lista de oradores 😢");
+      toast.error("Erro ao obter lista de oradores");
       console.log(error);
     } finally {
       setLoading(false);

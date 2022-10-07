@@ -36,9 +36,9 @@ export default function () {
       await getDiscursos(1, "");
       setPageIndex(0);
       setQ("");
-      toast.success("Discurso removido com sucesso 🎉");
+      toast.success("Discurso removido com sucesso");
     } catch (error) {
-      toast.error("Erro ao excluir discurso 😢");
+      toast.error("Erro ao excluir discurso");
       console.log(error);
     } finally {
       setLoading(false);
@@ -51,7 +51,7 @@ export default function () {
 
       await getDiscursos(1, "");
     } catch (error) {
-      toast.error("Erro ao obter lista de discursos 😢");
+      toast.error("Erro ao obter lista de discursos");
       console.log(error);
     } finally {
       setLoading(false);

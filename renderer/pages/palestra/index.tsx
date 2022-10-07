@@ -21,7 +21,6 @@ export default function () {
 
   const getPalestras = useCallback(async (page: number) => {
     const getted = await PalestraRepo.findAll({ page });
-    console.log(getted);
     const gettedCount = await PalestraRepo.count();
     setPalestras(getted);
     setPalestrasCount(gettedCount);
@@ -34,9 +33,9 @@ export default function () {
       await PalestraRepo.delete(id);
       await getPalestras(1);
       setPageIndex(0);
-      toast.success("Palestra removida com sucesso 🎉");
+      toast.success("Palestra removida com sucesso");
     } catch (error) {
-      toast.error("Erro ao excluir palestra 😢");
+      toast.error("Erro ao excluir palestra");
       console.log(error);
     } finally {
       setLoading(false);
@@ -49,7 +48,7 @@ export default function () {
 
       await getPalestras(1);
     } catch (error) {
-      toast.error("Erro ao obter lista de palestras 😢");
+      toast.error("Erro ao obter lista de palestras");
       console.log(error);
     } finally {
       setLoading(false);

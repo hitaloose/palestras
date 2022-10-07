@@ -28,13 +28,13 @@ export default function () {
 
   const createOrador = useCallback(async (values: Form) => {
     await OradorRepo.create(values);
-    toast.success("Orador cadastrado com sucesso 🎉");
+    toast.success("Orador cadastrado com sucesso");
   }, []);
 
   const updateOrador = useCallback(
     async (values: Form) => {
       await OradorRepo.update(id, values);
-      toast.success("Orador atualizado com sucesso 🎉");
+      toast.success("Orador atualizado com sucesso");
     },
     [id]
   );
@@ -56,7 +56,7 @@ export default function () {
 
         push("/orador");
       } catch (error) {
-        toast.error("Erro ao cadastrar orador 😢");
+        toast.error("Erro ao cadastrar/atualizar orador");
         console.log(error);
       } finally {
         setLoading(false);
@@ -76,7 +76,7 @@ export default function () {
       const orador = await OradorRepo.findById(id);
       reset(orador);
     } catch (error) {
-      toast.error("Não foi possivel obter o orador 😢");
+      toast.error("Não foi possivel obter o orador");
       console.log(error);
     } finally {
       setLoading(false);

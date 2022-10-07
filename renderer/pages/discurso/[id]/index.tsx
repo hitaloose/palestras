@@ -27,13 +27,13 @@ export default function () {
 
   const createDiscurso = useCallback(async (values: Form) => {
     await DiscursoRepo.create(values);
-    toast.success("Discurso cadastrado com sucesso 🎉");
+    toast.success("Discurso cadastrado com sucesso");
   }, []);
 
   const updateDiscurso = useCallback(
     async (values: Form) => {
       await DiscursoRepo.update(id, values);
-      toast.success("Discurso atualizado com sucesso 🎉");
+      toast.success("Discurso atualizado com sucesso");
     },
     [id]
   );
@@ -55,7 +55,7 @@ export default function () {
 
         push("/discurso");
       } catch (error) {
-        toast.error("Erro ao cadastrar orador 😢");
+        toast.error("Erro ao cadastrar/atualizar orador");
         console.log(error);
       } finally {
         setLoading(false);
@@ -75,7 +75,7 @@ export default function () {
       const orador = await DiscursoRepo.findById(id);
       reset(orador);
     } catch (error) {
-      toast.error("Não foi possivel obter o discurso 😢");
+      toast.error("Não foi possivel obter o discurso");
       console.log(error);
     } finally {
       setLoading(false);

@@ -33,13 +33,13 @@ export default function () {
 
   const createPalestra = useCallback(async (values: Form) => {
     await PalestraRepo.create(values);
-    toast.success("Palestra cadastrada com sucesso 🎉");
+    toast.success("Palestra cadastrada com sucesso");
   }, []);
 
   const updatePalestra = useCallback(
     async (values: Form) => {
       await PalestraRepo.update(id, values);
-      toast.success("Palestra atualizada com sucesso 🎉");
+      toast.success("Palestra atualizada com sucesso");
     },
     [id]
   );
