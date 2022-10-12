@@ -24,7 +24,7 @@ import "../lib/db";
 import "./global.css";
 import { Loading } from "../components/Loading";
 import migration from "../lib/migration";
-import { loadDatabases } from "../lib/loadDatabases";
+import { loadDatabases } from "../lib/db";
 
 export default function (props: AppProps) {
   const { Component, pageProps } = props;
@@ -54,6 +54,11 @@ export default function (props: AppProps) {
 
   const handlePalestraMenuClick = useCallback(() => {
     push("/palestra");
+    handleCloseDrawer();
+  }, [push, handleCloseDrawer]);
+
+  const handleBackupMenuClick = useCallback(() => {
+    push("/backup");
     handleCloseDrawer();
   }, [push, handleCloseDrawer]);
 
@@ -139,6 +144,15 @@ export default function (props: AppProps) {
                   <AccessAlarmIcon />
                 </ListItemIcon>
                 <ListItemText primary="Palestras" />
+              </ListItemButton>
+            </ListItem>
+
+            <ListItem disablePadding>
+              <ListItemButton onClick={handleBackupMenuClick}>
+                <ListItemIcon>
+                  <AccessAlarmIcon />
+                </ListItemIcon>
+                <ListItemText primary="Backup" />
               </ListItemButton>
             </ListItem>
           </List>
